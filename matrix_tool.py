@@ -35,27 +35,12 @@ print(A)
 print("\nMatrix B:")
 print(B)
 
-print("\nAddition:")
-print(A + B)
+print("\n=== Matrix Operations Menu ===")
+print("1. Addition")
+print("2. Subtraction")
+print("3. Multiplication")
+print("4. Transpose")
+print("5. Determinant")
+print("6. Exit")
 
-print("\nSubtraction:")
-print(A - B)
-
-print("\nTranspose of A:")
-print(A.T)
-
-print("\nDeterminant of A:")
-if rows == cols:
-    print(np.linalg.det(A))
-else:
-    print("Determinant can only be calculated for square matrices.")
-
-print("\nMultiplication:")
-if cols == rows:
-    try:
-        print(np.matmul(A, B))
-    except:
-        print("Multiplication not possible.")
-else:
-    print("Multiplication not possible for these matrix dimensions.")
-```
+choice = int(input("\nEnter your choice: "))
