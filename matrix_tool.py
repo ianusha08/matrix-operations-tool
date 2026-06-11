@@ -1,4 +1,4 @@
-```Python
+
 import numpy as np
 
 print("=== Matrix Operations Tool ===")
@@ -29,18 +29,46 @@ for i in range(rows):
 A = np.array(A)
 B = np.array(B)
 
-print("\nMatrix A:")
-print(A)
+while True:
+    print("\n=== Matrix Operations Menu ===")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Transpose")
+    print("5. Determinant")
+    print("6. Exit")
 
-print("\nMatrix B:")
-print(B)
+    choice = int(input("\nEnter your choice: "))
 
-print("\n=== Matrix Operations Menu ===")
-print("1. Addition")
-print("2. Subtraction")
-print("3. Multiplication")
-print("4. Transpose")
-print("5. Determinant")
-print("6. Exit")
+    if choice == 1:
+        print("\nAddition:")
+        print(A + B)
 
-choice = int(input("\nEnter your choice: "))
+    elif choice == 2:
+        print("\nSubtraction:")
+        print(A - B)
+
+    elif choice == 3:
+        print("\nMultiplication:")
+        try:
+            print(np.matmul(A, B))
+        except ValueError:
+            print("Multiplication not possible for these matrix dimensions.")
+
+    elif choice == 4:
+        print("\nTranspose of Matrix A:")
+        print(A.T)
+
+    elif choice == 5:
+        print("\nDeterminant of Matrix A:")
+        if rows == cols:
+            print(np.linalg.det(A))
+        else:
+            print("Determinant can only be calculated for square matrices.")
+
+    elif choice == 6:
+        print("Exiting Matrix Operations Tool...")
+        break
+
+    else:
+        print("Invalid choice. Please select a valid option.")
